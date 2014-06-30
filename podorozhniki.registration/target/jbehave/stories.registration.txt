@@ -1,0 +1,25 @@
+
+(stories/registration.story)
+Narrative:
+In order to use all of the system's features
+As a new user
+I want to register myself in the system
+Scenario: Successful registration of user.
+Given main page of podorozniki
+And registration page of podorozniki (FAILED)
+(org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '2.42.2', revision: '6a6995d31c7c56c340d6f45a76976d43506cd6cc', time: '2014-06-03 10:52:47'
+System info: host: 'хата-ПК', ip: '192.168.1.100', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.7.0_60'
+Driver info: driver.version: RemoteWebDriver)
+When user has entered required information (NOT PERFORMED)
+And user has clicked on the checkbox (NOT PERFORMED)
+And user has pushed confirm button (NOT PERFORMED)
+Then user has to see user name (NOT PERFORMED)
+And user has to see logout button (NOT PERFORMED)
+pages.webdriverActions.tearDown() (FAILED)
+(org.jbehave.core.failures.BeforeOrAfterFailed: Method tearDown (annotated with @AfterScenario in class pages.webdriverActions) failed: org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '2.42.2', revision: '6a6995d31c7c56c340d6f45a76976d43506cd6cc', time: '2014-06-03 10:52:47'
+System info: host: 'хата-ПК', ip: '192.168.1.100', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.7.0_60'
+Driver info: driver.version: RemoteWebDriver)
+
+Scenario: Registration of user with existed login

@@ -1,0 +1,7 @@
+<story path="stories/login.story" title="">
+<narrative keyword="Narrative:">
+  <inOrderTo keyword="In order to">use all of the system&apos;s features</inOrderTo>
+  <asA keyword="As a">user</asA>
+  <iWantTo keyword="I want to">login into the system</iWantTo>
+</narrative>
+<scenario keyword="Scenario:" title="Test succesful login into the podorozhniki for registered user.">

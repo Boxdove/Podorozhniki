@@ -1,0 +1,7 @@
+
+(stories/login.story)
+Narrative:
+In order to use all of the system's features
+As a user
+I want to login into the system
+Scenario: Test succesful login into the podorozhniki for registered user.
