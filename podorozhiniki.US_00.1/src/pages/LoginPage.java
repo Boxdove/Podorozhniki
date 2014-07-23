@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage extends Page {
 	protected WebDriver wdriver;
 
-	private static String baseUrl = "http://evbyminsd7238.minsk.epam.com:8080/pdrzh/main"; // ??????????
+	private static String baseUrl = "http://evbyminsd7238.minsk.epam.com:8080/pdrzh/main";
+	private static org.apache.log4j.Logger log = Logger
+			.getLogger(LoginPage.class);
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -33,6 +36,7 @@ public class LoginPage extends Page {
 	private WebElement username;
 
 	public void enterLogin(String login) {
+		log.info("login is performed");
 		try {
 			waitForElementFindBy(loginEdit);
 			loginEdit.clear();
@@ -52,7 +56,7 @@ public class LoginPage extends Page {
 		}
 	}
 
-	public DatabaseService clickLoginButton() {
+	public void  clickLoginButton() {
 		try {
 			waitForElementFindBy(commitPush);
 			commitPush.click();
@@ -60,6 +64,9 @@ public class LoginPage extends Page {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return PageFactory.initElements(wdriver, DatabaseService.class);
+	}
+	
+	public MainPageService goToTheMainPAge (){
+		return PageFactory.initElements(wdriver, MainPageService.class);
 	}
 }

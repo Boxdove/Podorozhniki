@@ -32,4 +32,5 @@ public class Page {
 	public void waitForLoad() {
 		wdriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
+	
 }
