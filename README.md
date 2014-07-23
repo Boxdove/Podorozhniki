@@ -1,7 +1,7 @@
 Podorozhniki
 ============
 This is internal company's project.
-Testing scenarios of login and registration in the system with using 
+Testing scenarios with using 
 BDD,
 Jbehave,
 Junit,
