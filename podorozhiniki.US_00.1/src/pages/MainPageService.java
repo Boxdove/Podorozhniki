@@ -1,36 +1,32 @@
 package pages;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
+import static org.junit.Assert.assertEquals;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.List;
-import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static org.junit.Assert.assertEquals;
-
 public class MainPageService extends Page {
 
-	private int numFromPage;
-	private int numFromBase;
-	private String DBUser;
-	private String DBPassword;
-	private String driver;
-	private String DBUrl;
+	protected int numFromPage;
+	protected int numFromBase;
+	protected String DBUser;
+	protected String DBPassword;
+	protected static String driverName;
+	public static String driver;
+	protected String DBUrl;
+	protected static String query;
+	protected DBConnection dbConnect;
+	protected static ReadingDataFile readingProperty; 
 
 	private By buttonJoin = By.xpath("//button[contains(text(),'Join')]");
 	private By nextPage = By
@@ -78,54 +74,28 @@ public class MainPageService extends Page {
 		log.info("there are " + numFromPage + " trips on the main page");
 		return numFromPage;
 	}
-
-	public int countRowsInDataBase() {
-		FileInputStream fis;
-		Properties property = new Properties();
-
-		try {
-			fis = new FileInputStream("src/datas.properties");
-			property.load(fis);
-			try {
-				fis.close();
-			} catch (IOException e) {
-			}
-
-			log.info("Count the number of trips in the database");
-			DBUser = property.getProperty("DBUser.id");
-			DBPassword = property.getProperty("DBPassword.id");
-			driver = property.getProperty("driver.id");
-			DBUrl = property.getProperty("DBUrl.id");
-
-			Connection con = null;
-			try {
-				Class.forName(driver);
-				con = DriverManager.getConnection(DBUrl, DBUser, DBPassword);
-				try {
-					Statement st = con.createStatement();
-					ResultSet res = st
-							.executeQuery("select count(id_trip) as rowcount from trip where id_trip_status = 1");
-					while (res.next()) {
-						numFromBase = res.getInt(1);
-					}
-				} catch (SQLException s) {
-					log.error("SQL statement is not executed");
-				}
-			} catch (Exception e) {
-				log.error("Error in the connection to the database");
-				e.printStackTrace();
-			}
-			log.info("there are " + numFromBase + "  trips in the DB");
-			return numFromBase;
-		} catch (IOException e) {
-			log.error("Property file is absent");
+	
+	public MainPageService countTripsInDatabase() throws SQLException {
+		log.info("countRowsInDataBase start");
+		readingProperty = PageFactory.initElements(wdriver, ReadingDataFile.class);
+		readingProperty.readingProperty(); 
+		DBUser = System.getProperty("DBUser.id");
+		DBPassword = System.getProperty("DBPassword.id");
+		driver = System.getProperty("driver.id");
+		DBUrl = System.getProperty("DBUrl.id");
+		query = System.getProperty("query.id");
+		dbConnect = PageFactory.initElements(wdriver, DBConnection.class);
+		ResultSet rs = dbConnect.queryExecutor(query);
+		while (rs.next()) {
+			numFromBase = rs.getInt(1);
 		}
-		return numFromBase;
+		log.info("there are " + numFromBase + " trips in the DB");
+		return PageFactory.initElements(wdriver, MainPageService.class);
 	}
 
-	public MainPageService IfNumbersAreEqual() {
-		log.info("numFromBase " + numFromBase);
-		log.info("numFromPage " + numFromPage);
+	public MainPageService IfNumbersAreEqual() throws SQLException {
+		log.info("numFromBase"+numFromBase);
+		log.info("numFromPage"+numFromPage);
 		assertEquals("Number of trips is not correct", numFromBase, numFromPage);
 		return PageFactory.initElements(wdriver, MainPageService.class);
 	}

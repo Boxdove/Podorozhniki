@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Page {
 
-	protected WebDriver wdriver;
+	protected static WebDriver wdriver;
 
 	public Page(WebDriver driver) {
 		this.wdriver = driver;

@@ -10,8 +10,7 @@ public class LoginPage extends Page {
 	protected WebDriver wdriver;
 
 	private static String baseUrl = "http://evbyminsd7238.minsk.epam.com:8080/pdrzh/main";
-	private static org.apache.log4j.Logger log = Logger
-			.getLogger(LoginPage.class);
+	private static Logger log = Logger.getLogger(LoginPage.class);
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -56,7 +55,7 @@ public class LoginPage extends Page {
 		}
 	}
 
-	public void  clickLoginButton() {
+	public void clickLoginButton() {
 		try {
 			waitForElementFindBy(commitPush);
 			commitPush.click();
@@ -65,8 +64,8 @@ public class LoginPage extends Page {
 			e.printStackTrace();
 		}
 	}
-	
-	public MainPageService goToTheMainPAge (){
+
+	public MainPageService goToTheMainPAge() {
 		return PageFactory.initElements(wdriver, MainPageService.class);
 	}
 }
