@@ -1,0 +1,63 @@
+As a driver 
+I can delete trip
+So that research all functionality 
+
+Given user1 has 3 trips as driver   
+When user1 deletes one trip 
+Then number of trips after deleting on the driver page is less in one item  
+Then deleted trips is not present on driver page
+
+Given user1 has 3 trips as driver 
+When user2 as passenger has subscribed on specific trip  
+And driver denied this trip 
+And user1 deletes one trip 
+Then number of trips after deleting on the driver page is less in one item  
+Then deleted trips is not present on driver page
+Then number of trips after deleting on the passenger page is less in one item  
+Then deleted trips is not present on passenger page
+
+Given user1 has 3 trips as driver 
+When user2 as passenger has subscribed on specific trip  
+And driver submitted this trip 
+And user1 deletes one trip 
+Then number of trips after deleting on the driver page is less in one item  
+Then deleted trips is not present on driver page
+Then number of trips after deleting on the passenger page is less in one item  
+Then deleted trips is not present on passenger page
+
+Given user1 has 3 trips as driver 
+When user2 as passenger has subscribed on specific trip  
+And driver accepted this trip 
+And user1 deletes one trip 
+Then number of trips after deleting on the driver page is less in one item  
+Then deleted trips is not present on driver page
+Then number of trips after deleting on the passenger page is less in one item  
+Then deleted trips is not present on passenger page
+
+Given user1 has 3 trips as driver 
+When user2 as passenger has subscribed on specific trip  
+And passenger denied this trip 
+And passenger deletes one trip 
+Then number of trips after deleting on the passenger page is less in one item  
+Then trip status on driver page is cancelled 
+Then trip status on passenger status is cancelled 
+Then trips status in database is cancelled
+
+Given user1 has 3 trips as driver 
+When user2 as passenger has subscribed on specific trip  
+And passenger accepted this trip 
+And passenger deletes one trip 
+Then number of trips after deleting on the passenger page is less in one item  
+Then trip status on driver page is cancelled 
+Then trip status on passenger status is cancelled 
+Then trips status in database is cancelled
+
+Given user1 has 3 trips as driver 
+When user2 as passenger has subscribed on specific trip  
+And passenger submitted this trip 
+And passenger deletes one trip 
+Then number of trips after deleting on the passenger page is less in one item  
+Then trip status on driver page is cancelled 
+Then trip status on passenger status is cancelled 
+Then trips status in database is cancelled
+
