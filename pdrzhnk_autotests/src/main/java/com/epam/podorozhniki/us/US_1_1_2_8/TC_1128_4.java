@@ -2,6 +2,8 @@ package com.epam.podorozhniki.us.US_1_1_2_8;
 
 import static org.junit.Assert.assertFalse;
 
+import org.junit.runner.RunWith;
+
 import java.sql.SQLException;
 
 import org.junit.Test;
@@ -10,11 +12,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.epam.podorozhniki.core.BaseActions;
 import com.epam.podorozhniki.core.Driver;
+import com.epam.podorozhniki.core.ReadingDatafile;
+import com.epam.podorozhniki.core.SeleniumRunner;
 
 /*
  * Created by Zoja_Sharova
  */
+
+@RunWith(SeleniumRunner.class)
 public class TC_1128_4 extends BaseActions {
 
 	// deleting trip with passenger status submitted

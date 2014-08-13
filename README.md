@@ -1,9 +1,4 @@
-Podorozhniki
+podorozhniki
 ============
-This is internal company's project.
-Testing scenarios with using 
-BDD,
-Jbehave,
-Junit,
-Webdriver,
-Maven
+
+This is test automation for Podorozhniki project.

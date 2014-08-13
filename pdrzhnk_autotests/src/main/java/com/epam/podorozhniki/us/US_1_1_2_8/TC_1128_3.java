@@ -11,11 +11,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.epam.podorozhniki.core.BaseActions;
 import com.epam.podorozhniki.core.Driver;
+import com.epam.podorozhniki.core.ReadingDatafile;
+import com.epam.podorozhniki.core.SeleniumRunner;
+
+import org.junit.runner.RunWith;
 
 /*
  * Created by Zoja_Sharova
  */
+
+@RunWith(SeleniumRunner.class)
 public class TC_1128_3 extends BaseActions {
 
 	// deleting trip with passenger status denied

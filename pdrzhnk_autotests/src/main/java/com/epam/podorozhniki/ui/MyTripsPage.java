@@ -3,8 +3,8 @@ package com.epam.podorozhniki.ui;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.epam.podorozhniki.core.DBConnection;
 import com.epam.podorozhniki.core.Driver;
-import com.epam.podorozhniki.db.DBConnection;
 import com.epam.podorozhniki.us.US_1_1_2_8.TC_1128_1;
 
 import org.apache.log4j.Logger;

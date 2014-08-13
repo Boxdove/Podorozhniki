@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.epam.podorozhniki.core.Driver;
+import com.epam.podorozhniki.core.ReadingDatafile;
 import com.epam.podorozhniki.ui.AddTripPage;
 import com.epam.podorozhniki.ui.MainPageAfterLogin;
 import com.epam.podorozhniki.ui.MainPageBeforeLogin;
@@ -191,13 +192,4 @@ public class US_Methods extends MethodsPage {
 		myTripsPage.statusIsSubmittedOnDriverPage(verification);
 	}
 	
-	public static String getMethodName(final int depth)
-	{
-	  final StackTraceElement[] ste = Thread.currentThread().getStackTrace();
-
-	  //System. out.println(ste[ste.length-depth].getClassName()+"#"+ste[ste.length-depth].getMethodName());
-	  // return ste[ste.length - depth].getMethodName();  //Wrong, fails for depth = 0
-	  return ste[ste.length - 1 - depth].getMethodName(); //Thank you Tom Tresansky
-	}
-
 }

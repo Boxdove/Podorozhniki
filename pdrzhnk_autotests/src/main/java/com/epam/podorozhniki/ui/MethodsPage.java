@@ -1,5 +1,6 @@
 package com.epam.podorozhniki.ui;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
@@ -28,8 +29,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.epam.podorozhniki.core.DBConnection;
 import com.epam.podorozhniki.core.Driver;
-import com.epam.podorozhniki.db.DBConnection;
 
 public class MethodsPage {
 
@@ -40,6 +41,26 @@ public class MethodsPage {
 
 	private static Logger log = Logger.getLogger(MethodsPage.class);
 
+	public MethodsPage isElementPresent_2(WebElement element) {
+		Assert.assertTrue(element + "  should be present",
+				element.isDisplayed());
+		return this; 
+	}
+
+	public MethodsPage isElementEnabled(WebElement element) {
+		Assert.assertTrue(element + "  should be present",
+				element.isDisplayed());
+		return this; 
+	}
+
+	public void checkText(String text, WebElement element) {
+		assertEquals(element.getText(), text);
+	}
+
+	public void waitForLoad() {
+		Driver.getInstance().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
+	
 	public MainPageBeforeLogin logout() {
 		waitForElementFindBy(logoutButton);
 		logoutButton.click();

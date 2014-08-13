@@ -1,8 +1,0 @@
-As a driver 
-I could configure appropriate filters in my calendar
-So that I could see all my trips status at the current day/week/month 
-And filter confirmed/required/submitted trips and requests from travelers
-
-Given driver submitted trips in the system
-When driver browses calendar from his account
-Then driver is able to filter his trips with appropriate filters

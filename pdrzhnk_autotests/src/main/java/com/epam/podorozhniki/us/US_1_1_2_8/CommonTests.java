@@ -10,8 +10,9 @@ import org.openqa.selenium.remote.ErrorHandler.UnknownServerException;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.epam.podorozhniki.core.DBConnection;
 import com.epam.podorozhniki.core.Driver;
-import com.epam.podorozhniki.db.DBConnection;
+import com.epam.podorozhniki.core.ReadingDatafile;
 import com.epam.podorozhniki.ui.MethodsPage;
 
 /*

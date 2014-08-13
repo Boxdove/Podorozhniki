@@ -11,9 +11,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 
 import com.epam.podorozhniki.core.Driver;
+import com.epam.podorozhniki.core.ReadingDatafile;
 import com.epam.podorozhniki.ui.MainPageAfterLogin;
 import com.epam.podorozhniki.ui.MainPageBeforeLogin;
-import com.epam.podorozhniki.us.US_1_1_2_8.ReadingDatafile;
 
 /*
  * Created by Zoja_Sharova
