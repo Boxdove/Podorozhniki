@@ -1,6 +1,7 @@
 package com.epam.podorozhniki.us.US_001;
 
 import static org.junit.Assert.assertEquals;
+import org.junit.runner.RunWith;
 
 import java.sql.SQLException;
 
@@ -12,13 +13,14 @@ import org.openqa.selenium.By;
 
 import com.epam.podorozhniki.core.Driver;
 import com.epam.podorozhniki.core.ReadingDatafile;
+import com.epam.podorozhniki.core.SeleniumRunner;
 import com.epam.podorozhniki.ui.MainPageAfterLogin;
 import com.epam.podorozhniki.ui.MainPageBeforeLogin;
 
 /*
  * Created by Zoja_Sharova
  */
-
+@RunWith(SeleniumRunner.class)
 public class TC_001 {
 
 	public int numFromPage;

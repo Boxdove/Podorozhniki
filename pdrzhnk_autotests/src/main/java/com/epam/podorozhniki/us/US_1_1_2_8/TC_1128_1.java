@@ -21,7 +21,7 @@ import org.junit.runner.RunWith;
 /*
  * Created by Zoja_Sharova
  */
-@RunWith(SeleniumRunner.class)
+@RunWith(RerunFailedRunner.class)
 public class TC_1128_1 extends BaseActions {
 
 	// for driver only

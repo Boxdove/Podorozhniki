@@ -5,13 +5,16 @@ import org.jbehave.core.annotations.BeforeScenario;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
+import org.junit.runner.RunWith;
 import org.openqa.selenium.support.PageFactory;
 
 import com.epam.podorozhniki.core.Driver;
 import com.epam.podorozhniki.core.ReadingDatafile;
 import com.epam.podorozhniki.ui.MainPageAfterLogin;
 import com.epam.podorozhniki.ui.MainPageBeforeLogin;
+import com.epam.podorozhniki.us.US_1_1_2_8.RerunFailedRunner;
 
+@RunWith(RerunFailedRunner.class)
 public class RunnerLoginPage {
 
 	public RunnerLoginPage() {

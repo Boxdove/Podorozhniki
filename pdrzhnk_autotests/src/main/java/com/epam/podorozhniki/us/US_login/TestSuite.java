@@ -28,8 +28,9 @@ import org.jbehave.core.steps.ParameterConverters.ExamplesTableConverter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.epam.podorozhniki.core.SeleniumRunner;
+import com.epam.podorozhniki.us.US_1_1_2_8.RerunFailedRunner;
 
+@RunWith(RerunFailedRunner.class)
 public class TestSuite extends JUnitStories {
 
 	@Override

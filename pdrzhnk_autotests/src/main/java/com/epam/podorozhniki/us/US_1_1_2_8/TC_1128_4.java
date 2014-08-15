@@ -21,7 +21,7 @@ import com.epam.podorozhniki.core.SeleniumRunner;
  * Created by Zoja_Sharova
  */
 
-@RunWith(SeleniumRunner.class)
+@RunWith(RerunFailedRunner.class)
 public class TC_1128_4 extends BaseActions {
 
 	// deleting trip with passenger status submitted

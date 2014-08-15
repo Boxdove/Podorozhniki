@@ -19,7 +19,7 @@ import com.epam.podorozhniki.core.SeleniumRunner;
  * Created by Zoja_Sharova
  */
 
-@RunWith(SeleniumRunner.class)
+@RunWith(RerunFailedRunner.class)
 public class TC_1128_5 extends BaseActions {
 
 	// deleting trip by passenger
@@ -89,20 +89,20 @@ public class TC_1128_5 extends BaseActions {
 	// }
 	//
 	// // checking after deleting trip by passenger on driver page
-//	@Test
-//	public void passRemovesTripAcceptedStatusCheckOnDriverPage()
-//			throws InterruptedException, SQLException {
-//		rd = new ReadingDatafile();
-//		rd.readingDataFile();
-//		commonTests = new CommonTests();
-//		commonTests.deletingTripWithPassengerByPass(rd.accepted);
-//		us_Methods = new US_Methods();
-//		us_Methods.getStatusFromDriverPage(rd.driver_username,
-//				rd.driver_password, "cancelled");
-//		System.out.println(" (\\___//)");
-//		System.out.println("  (='.'=)");
-//		System.out.println(" ('')_('')");
-//	}
+	// @Test
+	// public void passRemovesTripAcceptedStatusCheckOnDriverPage()
+	// throws InterruptedException, SQLException {
+	// rd = new ReadingDatafile();
+	// rd.readingDataFile();
+	// commonTests = new CommonTests();
+	// commonTests.deletingTripWithPassengerByPass(rd.accepted);
+	// us_Methods = new US_Methods();
+	// us_Methods.getStatusFromDriverPage(rd.driver_username,
+	// rd.driver_password, "cancelled");
+	// System.out.println(" (\\___//)");
+	// System.out.println("  (='.'=)");
+	// System.out.println(" ('')_('')");
+	// }
 
 	//
 	@Test
@@ -115,7 +115,7 @@ public class TC_1128_5 extends BaseActions {
 		us_Methods = new US_Methods();
 		us_Methods.getStatusFromDriverPage(rd.driver_username,
 				rd.driver_password, "cancelled");
-		
+
 	}
 	//
 	// @Test

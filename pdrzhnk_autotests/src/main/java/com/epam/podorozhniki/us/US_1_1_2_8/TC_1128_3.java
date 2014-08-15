@@ -22,7 +22,7 @@ import org.junit.runner.RunWith;
  * Created by Zoja_Sharova
  */
 
-@RunWith(SeleniumRunner.class)
+@RunWith(RerunFailedRunner.class)
 public class TC_1128_3 extends BaseActions {
 
 	// deleting trip with passenger status denied

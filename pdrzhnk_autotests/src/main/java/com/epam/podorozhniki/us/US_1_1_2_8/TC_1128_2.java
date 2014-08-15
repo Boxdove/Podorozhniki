@@ -21,7 +21,7 @@ import com.epam.podorozhniki.core.SeleniumRunner;
  * Created by Zoja_Sharova
  */
 
-@RunWith(SeleniumRunner.class)
+@RunWith(RerunFailedRunner.class)
 public class TC_1128_2 extends BaseActions {
 
 	// deleting trip with passenger status accepted
@@ -64,7 +64,8 @@ public class TC_1128_2 extends BaseActions {
 		numFromPageAsDriverAfterDelet = commonTests.numFromPageAsDriverAfterDelet;
 		commonTests.verifyNumberOfTripsOnthePage(
 				numFromPageAsDriverBeforeDelet, numFromPageAsDriverAfterDelet);
-//		getCurrentScreenshots("D:\\EPAM\\screenshots\\", us_Methods.getMethodName(1));
+		// getCurrentScreenshots("D:\\EPAM\\screenshots\\",
+		// us_Methods.getMethodName(1));
 	}
 
 	// check driver database after deleting trip
