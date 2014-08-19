@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -75,11 +77,14 @@ public class BaseActions extends MethodsPage {
 	private void captureScreenshot(String name) {
 		rd = new ReadingDatafile();
 		rd.readingDataFile();
-		// getCurrentScreenshots("D://EPAM/screenshots/",);
-		File screenshot = ((TakesScreenshot) Driver.getInstance())
-				.getScreenshotAs(OutputType.FILE);
-		String path = "D://EPAM/screenshots/" + screenshot.getName();
 		try {
+			String timeStamp = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss")
+					.format(Calendar.getInstance().getTime());
+			String fileID = name + "_" + timeStamp;
+			String screenName = String.format("%s.png", fileID);
+			String path = "D://EPAM/screenshots/" + screenName;
+			File screenshot = ((TakesScreenshot) Driver.getInstance())
+					.getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(screenshot, new File(path));
 		} catch (IOException e) {
 
