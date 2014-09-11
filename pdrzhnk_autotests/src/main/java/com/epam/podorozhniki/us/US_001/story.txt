@@ -1,0 +1,9 @@
+As an user  
+I can login to the system 
+So that research all functionality 
+
+Given user is registered to the system    
+When user has entered login password 
+And push submit button   
+Then user can see trips on the main page 
+And number of trips on the page is equal to the trip's number in the database 
